@@ -1,0 +1,20 @@
+machine:
+    timezone: Asia/Tokyo
+    services:
+        - docker
+
+compile:
+    override:
+        - docker build -t u6kapps/jenkins .
+
+test:
+    override:
+        - echo test
+
+deployment:
+    release:
+        branch: test
+        commands:
+            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+            # push jenkins
+            - docker push u6kapps/jenkins
