@@ -1,6 +1,6 @@
 # jenkins
 
-`u6k.Jenkins`、要するに自分用のJenkinsです。
+`u6k.Jenkins`、要するに自分用のJenkinsです。Docker in Dockerが可能です。
 
 [![CircleCI](https://circleci.com/gh/u6k/jenkins.svg?style=svg)](https://circleci.com/gh/u6k/jenkins)
 
@@ -26,9 +26,8 @@ $ docker pull u6kapps/jenkins
 # start container
 $ docker run -d \
     --name jenkins \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     -v $HOME/docker/jenkins:/root/.jenkins \
-    -v /var/run/docker.sock:/var/run/docker.sock:ro \
-    -v $(which docker):/usr/bin/docker:ro \
     -e VIRTUAL_HOST=jenkins.u6k.me \
     -e VIRTUAL_PORT=8080 \
     -e LETSENCRYPT_HOST=jenkins.u6k.me \
