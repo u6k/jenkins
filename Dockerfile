@@ -1,25 +1,13 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8
 
-RUN apk update && \
-    apk add curl
-
-# Install Docker binary
-RUN apk add docker
+# Install Docker binary, p7zip, awscli
+RUN apt-get update && \
+    apt-get install -y docker.io p7zip-full awscli && \
+    apt-get clean
 
 # Install Jenkins
-RUN apk add ttf-dejavu
-
-WORKDIR /opt
-RUN curl -OL http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-
-# Install p7zip
-RUN apk add p7zip
-
-# Install awscli
-RUN apk add python2 && \
-    curl -OL https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
-    pip install awscli
+RUN cd /opt && \
+    curl -OL http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 # Setting
 EXPOSE 8080
