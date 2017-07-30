@@ -7,7 +7,28 @@
 ## Requirement
 
 * Docker
-* `$HOME/docker/jenkins/`フォルダ
+
+```
+$ docker version
+Client:
+ Version:      17.03.1-ce
+ API version:  1.27
+ Go version:   go1.7.5
+ Git commit:   c6d412e
+ Built:        Tue Mar 28 00:40:02 2017
+ OS/Arch:      windows/amd64
+
+Server:
+ Version:      17.04.0-ce
+ API version:  1.28 (minimum version 1.12)
+ Go version:   go1.7.5
+ Git commit:   4845c56
+ Built:        Wed Apr  5 18:45:47 2017
+ OS/Arch:      linux/amd64
+ Experimental: false
+```
+
+* `${DOCKER_VOLUMES}/jenkins`フォルダ
 
 ## Build
 
@@ -15,25 +36,7 @@
 
 ## Installation
 
-```
-# stop container
-$ docker kill jenkins || true
-$ docker rm jenkins || true
-
-# pull image
-$ docker pull u6kapps/jenkins
-
-# start container
-$ docker run -d \
-    --name jenkins \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v $HOME/docker/jenkins:/root/.jenkins \
-    -e VIRTUAL_HOST=jenkins.u6k.me \
-    -e VIRTUAL_PORT=8080 \
-    -e LETSENCRYPT_HOST=jenkins.u6k.me \
-    -e LETSENCRYPT_EMAIL=u6k.apps@gmail.com \
-    u6kapps/jenkins
-```
+`docker-compose.yml`を参照。
 
 ## Author
 
