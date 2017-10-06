@@ -12,6 +12,7 @@ RUN apk update && \
         p7zip \
         python3 \
         curl \
+        git \
         ttf-dejavu && \
     # Setup python
     update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
