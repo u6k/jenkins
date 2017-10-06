@@ -22,4 +22,4 @@ fi
 exec "$@" &
 
 # startup jenkins
-java -jar /opt/jenkins/jenkins.war &
+java -jar /opt/jenkins/jenkins.war
