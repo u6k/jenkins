@@ -30,5 +30,6 @@ RUN chmod +x /usr/local/bin/jenkins-entrypoint.sh
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
     PATH=/usr/lib/jvm/java-1.8-openjdk/bin:$PATH
 VOLUME /root/.jenkins
+EXPOSE 8080
 
 CMD ["/usr/local/bin/jenkins-entrypoint.sh"]
