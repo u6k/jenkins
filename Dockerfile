@@ -1,21 +1,34 @@
-FROM openjdk:8
+FROM docker:dind
 
-# Install p7zip, awscli
-RUN apt-get update && \
-    apt-get install -y p7zip-full awscli build-essential && \
-    apt-get clean
+# Install
+RUN apk update && \
+    # Upgrade installed tools
+    apk upgrade && \
+    # Install tools
+    apk --no-cache add \
+        bash \
+        dpkg \
+        openjdk8-jre \
+        p7zip \
+        python3 \
+        curl \
+        ttf-dejavu && \
+    # Setup python
+    update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1 && \
+    # Install aws-cli
+    pip install awscli && \
+    # Install Jenkins
+    mkdir -p /opt/jenkins && \
+    curl -L -o /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
-# Install Docker, docker-compose
-RUN curl -sSL https://get.docker.com/ | sh && \
-    curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
-    chmod +x /usr/local/bin/docker-compose
-
-# Install Jenkins
-RUN cd /opt && \
-    curl -OL http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+# Setup entrypoint shell
+COPY jenkins-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/jenkins-entrypoint.sh
 
 # Setting
-EXPOSE 8080
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
+    PATH=/usr/lib/jvm/java-1.8-openjdk/bin:$PATH
 VOLUME /root/.jenkins
 
-CMD ["java", "-jar", "/opt/jenkins.war"]
+CMD ["/usr/local/bin/jenkins-entrypoint.sh"]
