@@ -1,8 +1,8 @@
 # jenkins
 
-`u6k.Jenkins`、要するに自分用のJenkinsです。Docker in Dockerが可能です。
+[![GitHub tag](https://img.shields.io/github/tag/u6k/jenkins.svg)](https://github.com/u6k/jenkins) [![Docker Pulls](https://img.shields.io/docker/pulls/u6kapps/jenkins.svg?style=flat-square)](https://hub.docker.com/r/u6kapps/jenkins/) [![Docker Build Statu](https://img.shields.io/docker/build/u6kapps/jenkins.svg?style=flat-square)](https://hub.docker.com/r/u6kapps/jenkins/) [![license](https://img.shields.io/github/license/u6k/jenkins.svg?style=flat-square)](https://github.com/u6k/jenkins/blob/master/LICENSE)
 
-[![CircleCI](https://circleci.com/gh/u6k/jenkins.svg?style=svg)](https://circleci.com/gh/u6k/jenkins)
+`u6k.Jenkins`、要するに自分用のJenkinsです。Docker in Dockerが可能です。
 
 ## Requirement
 
@@ -32,7 +32,7 @@ Server:
 
 ## Build
 
-`circle.yml`を参照。
+`docker-compose.yml`を参照。
 
 ## Installation
 
