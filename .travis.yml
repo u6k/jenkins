@@ -5,3 +5,12 @@ services:
 
 script:
     - docker build -t u6kapps/jenkins .
+
+after_success:
+    - if [ -n "$TRAVIS_TAG" ]; then
+          docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+          docker tag u6kapps/jenkins u6kapps/jenkins:$TRAVIS_TAG
+          docker push u6kapps/jenkins
+      else
+          echo skip docker push
+      fi
