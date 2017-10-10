@@ -4,7 +4,7 @@ services:
     jenkins:
         build: .
         volumes:
-            - "${PWD}/volume:/root/.jenkins"
+            - "${HOME}/docker-volume/jenkins:/root/.jenkins"
+            - "/var/run/docker.sock:/var/run/docker.sock:ro"
         ports:
             - "8080:8080"
-        privileged: true
