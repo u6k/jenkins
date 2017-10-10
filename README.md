@@ -1,6 +1,6 @@
 # jenkins
 
-[![GitHub tag](https://img.shields.io/github/tag/u6k/jenkins.svg)](https://github.com/u6k/jenkins) [![Docker Pulls](https://img.shields.io/docker/pulls/u6kapps/jenkins.svg?style=flat-square)](https://hub.docker.com/r/u6kapps/jenkins/) [![Docker Build Statu](https://img.shields.io/docker/build/u6kapps/jenkins.svg?style=flat-square)](https://hub.docker.com/r/u6kapps/jenkins/) [![license](https://img.shields.io/github/license/u6k/jenkins.svg?style=flat-square)](https://github.com/u6k/jenkins/blob/master/LICENSE)
+[![GitHub tag](https://img.shields.io/github/tag/u6k/jenkins.svg)](https://github.com/u6k/jenkins) [![Docker Pulls](https://img.shields.io/docker/pulls/u6kapps/jenkins.svg?style=flat-square)](https://hub.docker.com/r/u6kapps/jenkins/) [![Docker Build Status](https://img.shields.io/docker/build/u6kapps/jenkins.svg?style=flat-square)](https://hub.docker.com/r/u6kapps/jenkins/) [![license](https://img.shields.io/github/license/u6k/jenkins.svg?style=flat-square)](https://github.com/u6k/jenkins/blob/master/LICENSE)
 
 `u6k.Jenkins`、要するに自分用のJenkinsです。Docker in Dockerが可能です。
 
@@ -32,18 +32,22 @@ Server:
 
 ## Build
 
-`docker-compose.yml`を参照。
+```
+$ docker-compose build
+```
 
 ## Installation
 
-`docker-compose.yml`を参照。
+```
+$ docker-compose up -d
+```
 
 ## Author
 
-* [os-setup - u6k.Redmine()](https://redmine.u6k.me/projects/os-setup)
-* [u6k/jenkins](https://github.com/u6k/jenkins)
-* [u6k.Blog()](http://blog.u6k.me/)
+- [os-setup - u6k.Redmine()](https://redmine.u6k.me/projects/os-setup)
+- [u6k/jenkins](https://github.com/u6k/jenkins)
+- [u6k.Blog()](http://blog.u6k.me/)
 
 ## License
 
-* [MIT License](https://github.com/u6k/jenkins/blob/master/LICENSE)
+- [MIT License](https://github.com/u6k/jenkins/blob/master/LICENSE)
