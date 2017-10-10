@@ -15,3 +15,7 @@ after_success:
       else
           echo skip docker push;
       fi
+
+notifications:
+    slack:
+        secure: du+rAk2C3dHUMCWL8nqOnaGWApJGpBxois4Itcu/WWQhQSJ7ldGlrPzh0SY3XaQySJt0DFkftqlHCdvDPIHUO/6Sx4jhWd2ahhCaLEZLbxYW633g89G5LJMehhWas7TzaoxCGqtSj6gKnoEgJM8Pj9STacGlhpILXYeG1llRWg2Quf7Sj0okWi/I4NZXw3SEV1/2QNxhiP24m9mkslX1WfZaDeiUYkt7PbztOADO6oBZFeDkRzqA9oTv+U/VB81oKhWfgYjWPEIRhjBPlP2n/es4KZEtVnWA4L0fjtf3xVpLuDLdOa0rBdzFH0We50x42aJg68TDqjiqFAdsQpv9tALyUtgE9zkh1FzIQ+xG7NJOFrZm+PS7sM0d41YXOp4kbgeGiB9C+YbdyLvjY3H89mM9XorP65Q9hBewi/puVM9vk/bB8MGSDl2zXSBsNQ7pVhFWZ7ECnUjBNMrfNVutDPuGHpd0PR5ZvwnwHz2dl8XmjwdE9krfOURh7zuE3vKLyglAjmWU7vNTsHhFaCy8cqFbu+Q0Qq/X5KiGEQxMzaCG80UGe252T8GZadIVHRedfeRtMyzeKasZLV+Frp5JsY+nRH+tgDEIcdRnt6tEAhMdLJmnABZDEMmxAsZhMP7OBtl19ClIERnLPR+lSvm/KJQGtDHw4ZuPb5wyvI9BE3o=
